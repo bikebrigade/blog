@@ -19,4 +19,4 @@ Here you will find stories behind the tech that supports the Bike Brigade's init
 
 What began with spreadsheets and a dream has evolved into an open source app, which can be found [here](https://github.com/bikebrigade/dispatch).
 
-### Posts
+## Posts
