@@ -8,7 +8,12 @@ templateClass: tmpl-home
 <div class="wrapper post">
   <div>
     {# The post front matter includes the title property #}
+    <div class="postHeader">
     <h1 class='postTitle'>{{title}}</h1>
+      {% if author %}
+        <div class='postAuthor'>by <a href="/authors/{{author}}">{{author}}</a></div>
+      {% endif %}
+    </div>
 
     {# ADD P ELEMENT FROM TODO ON THE NEXT LINE #}
 
