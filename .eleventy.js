@@ -71,6 +71,14 @@ module.exports = function(eleventyConfig) {
     return coll;
   });
 
+  eleventyConfig.addCollection("author", function(collection) {
+    return function(username) {
+    const coll = collection
+      .getFilteredByTag("posts")
+      .filter(post => post.data.author === username)
+    return coll
+  }});
+
   return {
     dir: {
       input: "src",
