@@ -1,14 +1,14 @@
-# The Bike Brigade's tech blog  🚲 ⌨️ ✨
+**The Bike Brigade's tech blog  🚲 ⌨️ ✨**
 
-## Built with
+Built using:
 - [Eleventy](https://www.11ty.dev/)
-- [Github pages](https://pages.github.com/)
+- [Netlify](https://www.netlify.com/)
 
-## How to contribute
-- Write your post in markdown and add to `src/posts`
+**How to contribute**
 
-## Running locally
-- TBD
+_Running locally_
 
-## Deploying
-- TBD
+1. Clone and navigate to folder
+1. `npm start`
+1. Write your post in markdown and add to `src/posts`.
+1. Open a PR (deploys on merge).
