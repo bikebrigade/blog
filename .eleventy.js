@@ -37,6 +37,10 @@ module.exports = function(eleventyConfig) {
   }
   eleventyConfig.addPlugin(pluginSEO, seo);
 
+  // Syntax highlighting
+  const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+  eleventyConfig.addPlugin(syntaxHighlight);
+
   // Filters let you modify the content https://www.11ty.dev/docs/filters/
   eleventyConfig.addFilter("htmlDateString", dateObj => {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
