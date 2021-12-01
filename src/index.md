@@ -17,6 +17,6 @@ Bike Brigade pairs volunteer cyclists with community organizations that serve is
 
 Here you will find stories behind the tech that supports the Bike Brigade's initiatives.
 
-What began with spreadsheets and a dream has evolved into an open source app, which can be found [here](https://github.com/bikebrigade/dispatch).
+What began with spreadsheets and a dream has evolved into an <a href="https://github.com/bikebrigade/dispatch" target="_blank"> open source application</a> that helps the Brigade manage deliveries, communicate with riders, and organize campaigns with partners around the city.
 
 ## Posts
