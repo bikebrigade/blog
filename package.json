@@ -5,7 +5,7 @@
   "scripts": {
     "tailwind:process": "postcss src/css/style.css --o build/style.css --watch",
     "start": "concurrently \"npm run tailwind:process\" \"npm run serve\"",
-    "build": "NODE_ENV=production postcss src/css/style.css --o build/style.css && NODE_ENV=production eleventy",
+    "build": "NODE_ENV=production eleventy && NODE_ENV=production postcss src/css/style.css --o build/style.css",
     "serve": "npx eleventy --serve"
   },
   "dependencies": {
