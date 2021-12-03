@@ -6,15 +6,21 @@ templateClass: tmpl-home
 <h1>{{name}}</h1>
 <div class="flex items-center mt-8 mb-3 space-x-1">
 {%- if twitter -%}
-  <a class="w-8 h-8 p-1 border-0 rounded-full" href={{twitter}}
+  <a class="w-8 h-8 p-1 border-0 rounded-md" href={{twitter}}
     aria-label="Twitter">
     <img src="/assets/twitter.svg">
   </a>
 {%- endif -%}
 {%- if github -%}
-  <a class="w-8 h-8 p-1 border-0 rounded-full" href={{github}}
+  <a class="w-8 h-8 p-1 border-0 rounded-md" href={{github}}
      aria-label="Github">
     <img src="/assets/github.svg">
+  </a>
+{%- endif -%}
+{%- if linkedin -%}
+  <a class="w-8 h-8 p-1 border-0 rounded-md" href={{linkedin}}
+     aria-label="linkedin">
+    <img src="/assets/linkedin.svg">
   </a>
 {%- endif -%}
 </div>
