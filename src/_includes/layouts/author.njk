@@ -2,7 +2,27 @@
 layout: layouts/base.njk
 templateClass: tmpl-home
 ---
+<div class="flex items-center justify-between">
+<h1>{{name}}</h1>
+<div class="flex items-center mt-8 mb-3 space-x-1">
+{%- if twitter -%}
+  <a class="w-8 h-8 p-1 border-0 rounded-full" href={{twitter}}
+    aria-label="Twitter">
+    <img src="/assets/twitter.svg">
+  </a>
+{%- endif -%}
+{%- if github -%}
+  <a class="w-8 h-8 p-1 border-0 rounded-full" href={{github}}
+     aria-label="Github">
+    <img src="/assets/github.svg">
+  </a>
+{%- endif -%}
+</div>
+</div>
+
 {{ content | safe }}
+
+<h2>Posts</h2>
 <ul>
   {%- for post in collections.author(username) -%}
     <li{% if page.url == post.url %} aria-current="page"{% endif %}>{{ post.data.page.date | htmlDateString }} — <a href='{{ post.url }}'>{{ post.data.title }}</a></li>
