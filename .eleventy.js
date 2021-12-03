@@ -1,12 +1,14 @@
-const { DateTime } = require("luxon");
+const {
+  DateTime
+} = require("luxon");
 const pluginSEO = require("eleventy-plugin-seo");
 
 /**
-* This is the JavaScript code that determines the config for your Eleventy site
-*
-* You can add lost of customization here to define how the site builds your content
-* Try extending it to suit your needs!
-*/
+ * This is the JavaScript code that determines the config for your Eleventy site
+ *
+ * You can add lost of customization here to define how the site builds your content
+ * Try extending it to suit your needs!
+ */
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.setTemplateFormats([
@@ -23,7 +25,9 @@ module.exports = function(eleventyConfig) {
     "woff",
     "woff2"
   ]);
-  eleventyConfig.addPassthroughCopy("public");
+  eleventyConfig.addPassthroughCopy({
+    "public": "/"
+  });
 
   /* From: https://github.com/artstorm/eleventy-plugin-seo
 
@@ -43,10 +47,14 @@ module.exports = function(eleventyConfig) {
 
   // Filters let you modify the content https://www.11ty.dev/docs/filters/
   eleventyConfig.addFilter("htmlDateString", dateObj => {
-    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
+    return DateTime.fromJSDate(dateObj, {
+      zone: "utc"
+    }).toFormat("yyyy-LL-dd");
   });
 
-  eleventyConfig.setBrowserSyncConfig({ ghostMode: false });
+  eleventyConfig.setBrowserSyncConfig({
+    ghostMode: false
+  });
 
   /* Build the collection of posts to list in the site
      - Read the Next Steps post to learn how to extend this
@@ -78,11 +86,12 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addCollection("author", function(collection) {
     return function(username) {
-    const coll = collection
-      .getFilteredByTag("posts")
-      .filter(post => post.data.author === username)
-    return coll
-  }});
+      const coll = collection
+        .getFilteredByTag("posts")
+        .filter(post => post.data.author === username)
+      return coll
+    }
+  });
 
   return {
     dir: {

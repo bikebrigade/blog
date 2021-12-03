@@ -1,0 +1,55 @@
+@import url("https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/hk-grotesk.min.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  p {
+    @apply mb-4 leading-7;
+  }
+
+  a {
+    @apply transition duration-200 ease-linear border-b-4 border-purple-400 hover:bg-purple-400;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply mt-8 mb-3 font-bold leading-5;
+  }
+
+  h1 {
+    @apply text-3xl;
+  }
+
+  h2 {
+    @apply text-2xl;
+  }
+
+  ol {
+    @apply list-decimal list-inside;
+  }
+
+  ul {
+    @apply pb-4 list-disc list-inside;
+  }
+
+  li {
+    @apply mb-3 leading-6
+  }
+
+  pre {
+    @apply rounded-lg;
+  }
+
+  .changelog h1 {
+    @apply mt-8 mb-3 text-2xl underline;
+  }
+
+  .changelog li {
+    @apply text-lg;
+  }
+}
