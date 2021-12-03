@@ -5,31 +5,34 @@
     {# This is the base template for the site–other templates extend this one #}
 
     <meta charset="utf-8" />
-    <link rel="icon" href="/public/assets/bikebrigade_name.png" />
+    <link rel="icon" href="/assets/bikebrigade_name.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="the bike brigade's tech blog" />
-    <link rel="stylesheet" type="text/css" href="/public/style.css" />
+    <link rel="stylesheet" type="text/css" href="/style.css" />
     <link href="https://unpkg.com/prismjs@1.3.0/themes/prism-tomorrow.css" rel="stylesheet">
 
     {% seo "" %}
   </head>
-  <body>
-  <main>
+  <body class="flex flex-col min-h-screen">
+    <main class="flex-grow">
 
-    {# Page or post content will appear here #}
+      {# Page or post content will appear here #}
 
-    {{ content | safe }}
-
-      <footer class="footer">
-        <div class="links">
-          <a href="/">Home</a>
-          <span class="divider">|</span>
-          <a href="/about">About</a>
-          <span class="divider">|</span>
-          <a href="/changelog">Changelog</a>
+      <div class="mx-8 place-items-center">
+        <div class="flex flex-col max-w-4xl mx-auto">
+          {{ content | safe }}
         </div>
-      </footer>
+      </div>
+    </main>
 
-  </main>
+
+  <footer class="m-8 text-xl ">
+    <div class="flex divide-x divide-gray-800">
+      <div class="pr-4 text-center"><a class="p-1 border-0" href="/">Home</a></div>
+      <div class="px-4 text-center"><a class="p-1 border-0" href="/about">About</a></div>
+      <div class="px-4 text-center"><a class="p-1 border-0" href="/changelog">Changelog</a></div>
+    </div>
+  </footer>
+
   </body>
 </html>

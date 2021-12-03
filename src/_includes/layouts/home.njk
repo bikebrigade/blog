@@ -5,18 +5,30 @@ templateClass: tmpl-home
 
 {# The Home page uses this template–it extends the base template #}
 
-<div class="wrapper home">
-  <div class="content">
-    {{ content | safe }}
-    
-    {# After the the content defined in index.md, list the blog posts in the collection #}
-    <ul>
-      {%- for post in collections.posts -%}
-        <li{% if page.url == post.url %} aria-current="page"{% endif %}>{{ post.data.page.date | htmlDateString }} — <a href='{{ post.url }}'>{{ post.data.title }}</a></li>
-      {%- endfor -%}
-      <li><a href="/posts">View all posts</a></li>
-    </ul>
+<div class="mt-20 mb-8">
+  <div class="flex items-center">
+    <h1 class="font-bold text-9xl">Spoke</h1>
+    <div class="w-full">
+      <div class="flex items-center animate-move">
+        <div class="w-40 h-40 -mb-3 -ml-4 animate-roll">
+        <img
+          class="flex-shrink-0 w-full h-full"
+          src="/assets/bike_wheel.svg" alt="bike wheel by Dylan Bissonette from the Noun Project">
+          </div>
+      </div>
+    </div>
   </div>
+  <h2 class="-mt-4 text-4xl font-bold leading-10 text-gray-600 ml-28 " >A Bike Brigade (tech) blog</h2>
 </div>
+
+{{ content | safe }}
+
+{# After the the content defined in index.md, list the blog posts in the collection #}
+<ul>
+  {%- for post in collections.posts -%}
+    <li{% if page.url == post.url %} aria-current="page"{% endif %}>{{ post.data.page.date | htmlDateString }} — <a href='{{ post.url }}'>{{ post.data.title }}</a></li>
+  {%- endfor -%}
+  <li><a href="/posts">View all posts</a></li>
+</ul>
 
 
