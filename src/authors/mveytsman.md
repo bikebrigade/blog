@@ -6,9 +6,4 @@ github: https://github.com/mveytsman
 layout: layouts/author.njk
 ---
 
-# {{name}}
-
 These are some words about me
-
-## Posts
-
