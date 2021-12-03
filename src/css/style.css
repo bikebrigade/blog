@@ -45,6 +45,9 @@
     @apply rounded-lg;
   }
 
+  blockquote {
+    @apply pl-2 text-lg italic font-medium border-l-2 border-purple-200;
+  }
   .changelog h1 {
     @apply mt-8 mb-3 text-2xl underline;
   }
