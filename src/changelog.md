@@ -2,7 +2,7 @@
 layout: layouts/page.njk
 ---
 
-## Changelog
+# Changelog
 
 Original source found [here](https://github.com/bikebrigade/dispatch/blob/main/CHANGELOG.md).
 
