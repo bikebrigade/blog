@@ -16,9 +16,7 @@ If you'd like, you can clone and run the <a href="https://github.com/bikebrigade
 
 ##### A note on syntax
 
-Ecto allows you to write queries in two ways: **keyword-based** and **macro-based**. Most examples in the [official docs](https://hexdocs.pm/ecto/Ecto.Query.html) use keyword-based examples, but I find the less verbose macro-based more straightforward for simple operations.
-
-It's hard to argue against the value of writing queries in an almost-identical-to-SQL format, I think this was part of the reason I found Ecto a bit "fiddly" to get started with.
+Ecto allows you to write queries in two ways: **keyword-based** and **macro-based**. Most examples in the [official docs](https://hexdocs.pm/ecto/Ecto.Query.html) use the keyword-based syntax but I find the less verbose macro-based more straightforward for simple operations, particularly when you are messing around in [IEx](https://hexdocs.pm/iex/1.12/IEx.html), Elixir's interactive shell.
 
 #### Before we get started – reduce the amount of typing with `alias`
 
@@ -53,7 +51,7 @@ User |> Repo.get(1)
 # Find one by another attribute
 User |> Repo.get_by(name: "Dispatcher McGee")
 
-# Find first
+# Find first (by ID)
 User
 |> first
 |> Repo.one
@@ -72,7 +70,7 @@ User
 |> where([u], u.updated_at < ^today)
 |> Repo.all
 
-# WHERE (with a LIKE operator)
+# WHERE (with a ILIKE operator)
 User
 |> where([u], ilike(u.name, "%McGee%"))
 |> Repo.all
@@ -90,6 +88,12 @@ User
 # DISTINCT (get unique values)
 User
 |> distinct([u], u.name)
+|> Repo.all
+
+# LIMIT
+limit = 4
+User
+|> limit(^limit)
 |> Repo.all
 ```
 
@@ -112,7 +116,7 @@ User.changeset(%User{}, %{name: "Stephanie"})
 # => returns errors
 
 # Create (using all required fields)
-User.changeset(%User{}, %{name: "Stephanie", email: "stephanie@mail.com", phone: "+16479231256"})
+User.changeset(%User{}, %{name: "Stephanie", email: "stephanie@example.com", phone: "+16475551256"})
 |> Repo.insert
 
 # Update
@@ -129,8 +133,8 @@ mcgee = User |> Repo.get_by(name: "Dispatcher McGee")
 stephanie = User |> Repo.get_by(name: "Stephanie")
 
 Repo.transaction(fn ->
-  User.changeset(stephanie, %{email: "bikesrock@mail.com"}) |> Repo.update
-  User.changeset(mcgee, %{email: "bikesrock@mail.com"}) |> Repo.update
+  User.changeset(stephanie, %{email: "bikesrock@example.com"}) |> Repo.update
+  User.changeset(mcgee, %{email: "bikesrock@example.com"}) |> Repo.update
 end)
 
 # => returns errors because of uniqueness constraint. Neither records are updated.
@@ -151,7 +155,9 @@ iex> campaign.tasks
 [...]
 ```
 
-Persisting associations
+##### Persisting associations
+
+Note: Ecto has a couple of ways of handling associations that fall into that sounds-similar-but-slightly different category (`build_assoc`, `put_assoc`, `cast_assoc`, ...). Here I used `put_assoc` to illustrate the scenario where the record we want to associate already exists, any existing associated records should be replaced with the ones provided by the user.
 
 ```elixir
 iex> alias BikeBrigade.Riders.{Rider, Tag}
@@ -178,3 +184,4 @@ iex> rider.tags
 - [https://hexdocs.pm/ecto/Ecto.Query.html](https://hexdocs.pm/ecto/Ecto.Query.html)
 - [https://elixirschool.com/en/lessons/ecto/querying_basics#writing-queries-with-ectoquery-3](https://elixirschool.com/en/lessons/ecto/querying_basics#writing-queries-with-ectoquery-3)
 - [https://github.com/mauricew/from-activerecord-to-ecto](https://github.com/mauricew/from-activerecord-to-ecto)
+- [https://alchemist.camp/episodes/ecto-beginner-build-put-assoc](https://alchemist.camp/episodes/ecto-beginner-build-put-assoc)
