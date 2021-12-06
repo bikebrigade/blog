@@ -2,7 +2,7 @@
 name: Jenna Blumenthal
 username: jennablumenthal
 twitter: https://twitter.com/jennaleeblume
-github: https://github.com/mveytsman
+github: https://github.com/jennaleeb
 layout: layouts/author.njk
 ---
 
