@@ -1,6 +1,6 @@
 ---
 title: My Ecto.Query Cheatsheet
-description: A collection of things I try not to google twice when working on Dispatch
+excerpt: A collection of things I try not to google twice when working on Dispatch
 author: jennablumenthal
 date: 2021-11-19
 tags:

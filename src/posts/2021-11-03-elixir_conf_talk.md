@@ -1,6 +1,6 @@
 ---
 title: Distributed Real-time Pandemic Response
-description: Max Veytsman presents Bike Brigade at ElixirConf 2021
+excerpt: Max Veytsman presents Bike Brigade at ElixirConf 2021
 author: mveytsman
 date: 2021-11-03
 tags:
