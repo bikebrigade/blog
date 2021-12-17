@@ -10,7 +10,7 @@
   }
 
   a {
-    @apply transition duration-200 ease-linear border-b-4 border-purple-400 hover:bg-purple-400;
+    @apply underline transition duration-200 ease-linear decoration-purple-400 decoration-2 underline-offset-1 hover:bg-purple-400;
   }
 
   h1,
