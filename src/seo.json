@@ -2,7 +2,7 @@
   "title": "Spoke",
   "description": "the bike brigade's tech blog!",
   "url": "https://spoke.bikebrigade.ca",
-  "image": "/assets/bike_wheel.svg",
+  "image": "/assets/bike_wheel.png",
   "twitter": "thebikebrigade",
   "options": {
     "imageWithBaseUrl": true
