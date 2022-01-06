@@ -1,6 +1,6 @@
 ---
 title: A gentle introduction to Nix
-description: A few lines of code, and a very gentle introduction to a very complicated package manager
+excerpt: A few lines of code, and a very gentle introduction to a very complicated package manager
 author: jennablumenthal
 date: 2021-12-13
 tags:
