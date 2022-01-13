@@ -41,7 +41,7 @@ I found it surprisingly difficult to dig up a basic no-frills example of what a 
     buildInputs = [
       pkgs.buildPackages.nodejs-16_x
       # NodeJS, above version 16 please!
-    ]
+    ];
 }
 ```
 
